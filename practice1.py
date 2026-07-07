@@ -95,3 +95,69 @@ if(year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
 
 else:
     print("no,",year,"is not leap year.")    
+
+
+#Create a simple calculator:-
+def calc():
+    print("simple calculator")
+    print("operations: +, -, *, /")
+
+    no_1 = int(input("Enter your first number :"))
+    op = input("Enter operation :")
+    no_2 = int(input("Enter your second number :"))
+
+    if(op == "+"):
+        result = no_1 + no_2
+    elif(op == "-"):
+        result = no_1 - no_2
+    elif(op == "*"):
+        result = no_1 * no_2
+    elif(op == "/"):
+        if(no_2 == 0):
+            print("Error: Cannot divide by zero.")
+            return 
+        result = no_1 / no_2
+    else:
+        print("Invalid operation.")
+        return
+    print("Result :",result)
+
+calc() 
+
+
+#Convert Celsius to Kelvin:-
+temp = float(input("Enter temperature in celsius :"))
+
+kelv = temp + 274
+
+print("temperature in kelvin is :",kelv) 
+
+
+#Find the area of circle:-
+radius = float(input("Enter the radius of your circle :"))
+
+perimeter = (2 * 3.14 * radius)
+area = (3.14 * radius * radius)
+
+print("perimeter of your circle is :",perimeter)
+print("area of your circle is :",area) 
+
+
+#Calculate student grade from marks:-
+marks = int(input("Enter your marks :"))
+
+if(marks >= 90):
+    print("you are pass and got A grade. Your marks:",marks)
+elif(marks >= 80):
+    print("you are pass and got B grade. Your marks:",marks)
+elif(marks >= 70):
+    print("you are pass and got C grade. Your marks:",marks)
+elif(marks >= 60):
+    print("you are pass and got D grade. Your marks:",marks)
+elif(marks >= 50):
+    print("you are pass and got E grade. Your marks:",marks)
+else:
+    print("you are fail and got F grade. Your marks:",marks)    
+
+
+print("---------------THANKS FOR USEING ME---------------")                    
