@@ -142,3 +142,5 @@ movie2 = input("enter name :")
 movie3 = input("enter name :")
 movie = [movie1, movie2, movie3]
 print(movie) 
+
+print("Har Har Mahadev")
