@@ -161,3 +161,212 @@ else:
 
 
 print("---------------THANKS FOR USEING ME---------------")                    
+
+
+
+
+
+students = []
+
+
+# Add Student
+def add_student():
+    name = input("Enter student name: ")
+
+    maths = int(input("Enter Maths marks: "))
+    physics = int(input("Enter Physics marks: "))
+    chemistry = int(input("Enter Chemistry marks: "))
+
+    student = {
+        "name": name,
+        "maths": maths,
+        "physics": physics,
+        "chemistry": chemistry
+    }
+
+    students.append(student)
+
+    print("\nStudent added successfully! ✅")
+
+
+# Calculate result
+def calculate_result(student):
+    total = (
+        student["maths"]
+        + student["physics"]
+        + student["chemistry"]
+    )
+
+    percentage = total / 3
+
+    return total, percentage
+
+
+# Show all students
+def show_students():
+
+    if len(students) == 0:
+        print("\nNo students found.")
+        return
+
+    print("\n===== All Students =====")
+
+    for student in students:
+
+        total, percentage = calculate_result(student)
+
+        if percentage >= 33:
+            result = "PASS"
+        else:
+            result = "FAIL"
+
+        print("\nName:", student["name"])
+        print("Maths:", student["maths"])
+        print("Physics:", student["physics"])
+        print("Chemistry:", student["chemistry"])
+        print("Total:", total)
+        print("Percentage:", round(percentage, 2), "%")
+        print("Result:", result)
+
+
+# Search student
+def search_student():
+
+    name = input("\nEnter student name to search: ")
+
+    found = False
+
+    for student in students:
+
+        if student["name"].lower() == name.lower():
+
+            total, percentage = calculate_result(student)
+
+            print("\n===== Student Found =====")
+            print("Name:", student["name"])
+            print("Maths:", student["maths"])
+            print("Physics:", student["physics"])
+            print("Chemistry:", student["chemistry"])
+            print("Total:", total)
+            print("Percentage:", round(percentage, 2), "%")
+
+            if percentage >= 33:
+                print("Result: PASS")
+            else:
+                print("Result: FAIL")
+
+            found = True
+            break
+
+    if found == False:
+        print("\nStudent not found ❌")
+
+
+# Find topper
+def find_topper():
+
+    if len(students) == 0:
+        print("\nNo students found.")
+        return
+
+    topper = students[0]
+
+    for student in students:
+
+        student_total, topper_total = (
+            calculate_result(student)[0],
+            calculate_result(topper)[0]
+        )
+
+        if student_total > topper_total:
+            topper = student
+
+    total, percentage = calculate_result(topper)
+
+    print("\n===== 🏆 Topper =====")
+    print("Name:", topper["name"])
+    print("Total:", total)
+    print("Percentage:", round(percentage, 2), "%")
+
+
+# Subject toppers
+def subject_toppers():
+
+    if len(students) == 0:
+        print("\nNo students found.")
+        return
+
+    maths_topper = students[0]
+    physics_topper = students[0]
+    chemistry_topper = students[0]
+
+    for student in students:
+
+        if student["maths"] > maths_topper["maths"]:
+            maths_topper = student
+
+        if student["physics"] > physics_topper["physics"]:
+            physics_topper = student
+
+        if student["chemistry"] > chemistry_topper["chemistry"]:
+            chemistry_topper = student
+
+    print("\n===== Subject Toppers =====")
+
+    print(
+        "Maths Topper:",
+        maths_topper["name"],
+        "-",
+        maths_topper["maths"]
+    )
+
+    print(
+        "Physics Topper:",
+        physics_topper["name"],
+        "-",
+        physics_topper["physics"]
+    )
+
+    print(
+        "Chemistry Topper:",
+        chemistry_topper["name"],
+        "-",
+        chemistry_topper["chemistry"]
+    )
+
+
+# Main program
+while True:
+
+    print("\n")
+    print("===== Student Result System =====")
+    print("1. Add Student")
+    print("2. Show All Students")
+    print("3. Search Student")
+    print("4. Find Topper")
+    print("5. Subject Toppers")
+    print("6. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        add_student()
+
+    elif choice == "2":
+        show_students()
+
+    elif choice == "3":
+        search_student()
+
+    elif choice == "4":
+        find_topper()
+
+    elif choice == "5":
+        subject_toppers()
+
+    elif choice == "6":
+        print("\nProgram closed. 👋")
+        break
+
+    else:
+        print("\nInvalid choice ❌")
