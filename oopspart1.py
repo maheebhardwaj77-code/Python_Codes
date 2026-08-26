@@ -75,3 +75,5 @@ cus1.debit(2000)
 cus1.credit(10000)
 cus1.debit(5000)
 cus1.debit(50)
+
+print("fuck off")
