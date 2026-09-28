@@ -6,13 +6,38 @@
 # t.forward(100)
 # turtle.done()
 
-import turtle
+# import turtle
 
-screen = turtle.Screen()
-screen.bgcolor("blue")
-screen.setup(width=600, height=400)
+# screen = turtle.Screen()
+# screen.bgcolor("blue")
+# screen.setup(width=600, height=400)
+# t = turtle.Turtle()
+# t.shape("circle")
+# t.color("darkgreen")
+# t.forward(150)
+# screen.exitonclick()
+
+# import turtle
+
+# t = turtle.Turtle()
+# for i in range(4):
+#     t.forward(100)
+#     t.right(90)
+# turtle.done()
+
+# import turtle
+
+# t = turtle.Turtle()
+# for i in range(2):
+#     t.forward(150)
+#     t.right(90)
+#     t.forward(80)
+#     t.right(90)
+# turtle.done()
+
+import turtle
 t = turtle.Turtle()
-t.shape("turtle")
-t.color("darkgreen")
-t.forward(150)
-screen.exitonclick()
+for i in range(3):
+    t.forward(120)
+    t.right(120)
+turtle.done()
