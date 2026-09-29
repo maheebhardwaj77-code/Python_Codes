@@ -12,7 +12,7 @@
 # screen.bgcolor("blue")
 # screen.setup(width=600, height=400)
 # t = turtle.Turtle()
-# t.shape("circle")
+# t.shape("turtle")
 # t.color("darkgreen")
 # t.forward(150)
 # screen.exitonclick()
@@ -35,9 +35,33 @@
 #     t.right(90)
 # turtle.done()
 
+# import turtle
+# t = turtle.Turtle()
+# for i in range(3):
+#     t.forward(120)
+#     t.right(120)
+# turtle.done()
+
+# import turtle
+# t = turtle.Turtle()
+# t.circle(60)
+# turtle.done()
+
+# import turtle
+
+# t = turtle.Turtle()
+# for i in range(5):
+#     t.forward(150)
+#     t.right(144)
+# turtle.done()
+
 import turtle
 t = turtle.Turtle()
-for i in range(3):
-    t.forward(120)
-    t.right(120)
+t.forward(50)
+t.left(45)
+t.forward(30)
+print("Position:", t.position())
+print("Heading:", t.heading())
+print("Is pen down?", t.isdown())
+print("Distance from origin:", t.distance(0,0))
 turtle.done()
